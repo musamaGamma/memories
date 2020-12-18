@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {useCreateIndex: true, useNewUrlParser: 
 //routes
 
 app.use("/posts", require("./routes/posts"))
-
+const __dirname = path.resolve()
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/client/build")))
   
