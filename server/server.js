@@ -24,9 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {useCreateIndex: true, useNewUrlParser: 
 //routes
 
 app.use("/posts", require("./routes/posts"))
-app.use("/", (req, res)=> {
-    res.send("welcome to memories api")
-})
+
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/client/build")))
   
